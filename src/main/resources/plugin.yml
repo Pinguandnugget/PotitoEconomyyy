@@ -1,0 +1,12 @@
+name: PotitoEconomyProbe
+version: 0.1.0
+main: com.potitosafio.eco.PotitoEconomyProbe
+api-version: '1.21'
+author: PotitoStudio
+commands:
+  potitoeco:
+    description: Diagnostico de solo lectura del banco DEDsafio
+    usage: /potitoeco <estado|saldo>
+permissions:
+  potitoeco.admin:
+    default: op
