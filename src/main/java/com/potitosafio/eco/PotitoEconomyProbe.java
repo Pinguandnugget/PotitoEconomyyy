@@ -28,7 +28,7 @@ public final class PotitoEconomyProbe extends JavaPlugin {
         player.spigot().sendMessage(message);
     }
     private static void appendCoin(TextComponent parent, long count, char glyph) {
-        if (!parent.getExtra().isEmpty()) parent.addExtra(new TextComponent("  "));
+        if (parent.getExtra() != null && !parent.getExtra().isEmpty()) parent.addExtra(new TextComponent("  "));
         TextComponent number = new TextComponent(Long.toString(count) + " ");
         number.setColor(ChatColor.WHITE);
         parent.addExtra(number);
