@@ -14,3 +14,7 @@ No integra Vault ni modifica saldos.
 El acceso a clases del mod desde el classloader Bukkit **no está garantizado**. Si falla, comparte el error del log para adaptar el puente.
 
 No cambies todavía la economía de Vault.
+
+
+## v0.2 - Logos originales
+`/potitoeco saldo` desglosa el saldo en deditas rojas (10000), verdes (100) y azules (1) con la fuente `ruleta:monedas` del mod. Solo lectura. Requiere cliente con los recursos del mod.
