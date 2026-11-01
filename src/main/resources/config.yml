@@ -1,0 +1,3 @@
+# Mantener false hasta validar lectura y proveedor de Vault.
+enable-transactions: false
+# Activar solo tras probar con copia de seguridad y cuenta de prueba.

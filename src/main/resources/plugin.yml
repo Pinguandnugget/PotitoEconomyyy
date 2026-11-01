@@ -1,12 +1,15 @@
-name: PotitoEconomyProbe
-version: 0.2.0
+name: PotitoEconomy
+version: 0.3.0
 main: com.potitosafio.eco.PotitoEconomyProbe
 api-version: '1.21'
 author: PotitoStudio
+depend: [Vault]
 commands:
   potitoeco:
-    description: Diagnostico de solo lectura del banco DEDsafio
-    usage: /potitoeco <estado|saldo>
+    description: Banco de PotitoSafio
+    usage: /potitoeco <saldo|estado>
 permissions:
+  potitoeco.saldo:
+    default: true
   potitoeco.admin:
     default: op

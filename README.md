@@ -1,20 +1,17 @@
-# PotitoEconomy Probe 0.1.0
+# PotitoEconomy 0.3 (experimental)
+Plugin puente Vault para DEDsafio4FAN 1.4.0 / Arclight 1.21.1.
 
-Prueba **solo lectura** para Minecraft 1.21.1 / Java 21 / Arclight.
-No integra Vault ni modifica saldos.
+## Compilar en GitHub
+Sube TODO el contenido del ZIP a la raíz del repositorio (incluyendo `libs/Vault.jar` y `.github/workflows/build.yml`). Abre Actions y descarga el artefacto de compilación.
 
-## GitHub Actions
-1. Crea un repositorio vacío.
-2. Sube **el contenido de esta carpeta**, incluyendo `.github/workflows/build.yml`, a la raíz del repositorio.
-3. Abre Actions > Compilar PotitoEconomy Probe > Run workflow, o espera el build del push.
-4. Descarga el artifact `PotitoEconomyProbe-jar`, descomprímelo y extrae el `.jar`.
-5. Con copia de seguridad y en un servidor de prueba, coloca el `.jar` en `plugins/` y reinicia.
-6. Prueba `/potitoeco estado` y `/potitoeco saldo` como OP.
+## Prueba segura
+1. Haz copia de seguridad del mundo y `world/data/ruleta_dedsafio.dat`.
+2. Apaga servidor, retira la versión anterior del plugin e instala el nuevo jar.
+3. Deja `enable-transactions: false` inicialmente.
+4. Ejecuta `/potitoeco estado`, `/potitoeco saldo` y `/vault-info`.
+5. Verifica en consola que Vault usa PotitoEconomy. NO pruebes compras con el modo de solo lectura.
+6. En servidor de pruebas, cambia `enable-transactions: true` y reinicia; usa una cuenta de prueba y una venta pequeña en AuctionHouse. Verifica ambos saldos antes/después y el vendedor desconectado.
 
-El acceso a clases del mod desde el classloader Bukkit **no está garantizado**. Si falla, comparte el error del log para adaptar el puente.
+**Avisos:** Sin pruebas en Arclight de esta versión; las operaciones Vault deben correr en hilo principal. El acceso al banco es por reflexión a nombres ofuscados del mod y puede romperse si se actualiza. Los precios con logos en AuctionHouse requieren cambios adicionales. `format()` todavía devuelve texto simple.
 
-No cambies todavía la economía de Vault.
-
-
-## v0.2 - Logos originales
-`/potitoeco saldo` desglosa el saldo en deditas rojas (10000), verdes (100) y azules (1) con la fuente `ruleta:monedas` del mod. Solo lectura. Requiere cliente con los recursos del mod.
+Permisos: `potitoeco.saldo` (todos), `potitoeco.admin` (OP).
